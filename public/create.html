@@ -44,6 +44,19 @@
           </div>
         </form>
       </div>
+      <!-- Point Conditional -->
+      <!-- End Condition (ROUNDS/SCORE/ELIMINATION) -->
+      <div class="row">
+        <div class="input-field col s12">
+          <select>
+            <option value="" disabled selected>Make your selection</option>
+            <option value="rounds">Round limit is reached.</option>
+            <option value="score">Score limit is reached.</option>
+            <option value="elimination">Only one player is remaining.</option>
+          </select>
+          <label>The game ends when:</label>
+        </div>
+      </div>
       <!-- Minimum Number of Players -->
       <div class="row">
         <h6>Minimum Players:</h6>
@@ -66,63 +79,59 @@
       <div class="row">
         <p class="col s1">
           <label class="">
-            <input type="checkbox" class="filled-in" checked="checked" />
-            <span></span>
-          </label>
+            <input
+              type="checkbox"
+              class="filled-in"
+              id="limitScore"
+              checked="checked"
+            />
+            <span>
+            </label>
         </p>
         <div class="input-field col s5">
-          <input id="input_text" type="number" data-length="4" min="0" />
-          <label for="input_text">Score to Reach</label>
+            <input id="scoreLimit" type="number" data-length="4" min="0" />
+            <label for="scoreLimit">Score to Reach</label>
+        </span>
         </div>
         <!-- Player Elimination Conditional -->
         <p class="col s6">
           <label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input
+              type="checkbox"
+              class="filled-in"
+              id="playerElimination"
+              checked="checked"
+            />
             <span>Player Elimination?</span>
           </label>
         </p>
-      </div>
-      <!-- Point Conditional -->
-      <!-- End Condition (ROUNDS/SCORE/ELIMINATION) -->
-      <div class="row">
-        <p class="col s1">
-          <label>
-            <input type="checkbox" class="filled-in" checked="checked" />
-            <span></span>
-          </label>
-        </p>
-        <h6 class="col s11">End-Game Conditional:</h6>
-        <div class="row">
-          <div class="input-field col s12">
-            <select>
-              <option value="" disabled selected>The game ends when...</option>
-              <option value="rounds">Round limit is reached</option>
-              <option value="score">Score limit is reached</option>
-              <option value="elimination">Only one player remaining</option>
-            </select>
-            <label>What ends your game?</label>
-          </div>
-        </div>
       </div>
       <!-- Maximum Number of Rounds -->
       <div class="row">
         <p class="col s1">
           <label>
-            <input type="checkbox" class="filled-in" checked="checked" />
+            <input
+              type="checkbox"
+              class="filled-in"
+              id="limitRounds"
+              checked="checked"
+            />
             <span></span>
           </label>
         </p>
         <h6 class="col s11">Number of Rounds:</h6>
-        <form action="#">
-          <p class="range-field">
-            <input type="range" id="maxPlayer" min="1" max="25" />
-          </p>
-        </form>
+        <div class="row">
+          <form action="#">
+            <p class="range-field">
+              <input type="range" id="roundLimit" min="1" max="25" />
+            </p>
+          </form>
+        </div>
       </div>
       <!-- Submit Game -->
       <div class="row">
         <div class="col s12">
-          <a class="waves-effect waves-light btn green">Submit Game</a>
+          <a class="waves-effect waves-light btn green" id="submitGame">Submit Game</a>
         </div>
       </div>
     </div>
@@ -133,7 +142,9 @@
         $("select").formSelect();
       });
       $(document).ready(function() {
-        $("input#input_text, textarea#textarea2").characterCounter();
+        $(
+          "input#input_text, input#scoreLimit, textarea#textarea2"
+        ).characterCounter();
       });
     </script>
   </body>
