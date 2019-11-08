@@ -27,17 +27,114 @@
     <nav>
       <!-- Title  -->
       <div class="nav-wrapper green">
-        <a href="./" class="brand-logo" style="margin-left: 1%">SCOREEE</a>
+        <a href="/" class="brand-logo" style="margin-left: 1%">SCOREEE</a>
       </div>
     </nav>
     <!-- Container -->
     <div class="container">
-      <!-- Row: Options and forms -->
+      <div class="row center-align"><h4>Create Your Game</h4></div>
+      <!-- Name of Game -->
+      <div class="row" id="">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="input_text" type="text" data-length="50" />
+              <label for="input_text">Game Name</label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- End Condition (ROUNDS/SCORE/ELIMINATION) -->
+      <!-- Minimum Number of Players -->
       <div class="row">
-        <!-- BLANK SPACE **Add forms here** -->
+        <h6>Minimum Players:</h6>
+        <form action="#">
+          <p class="range-field">
+            <input type="range" id="minPlayer" min="1" max="8" />
+          </p>
+        </form>
+      </div>
+      <!-- Maximum Number of Players -->
+      <div class="row">
+        <h6>Max Players:</h6>
+        <form action="#">
+          <p class="range-field">
+            <input type="range" id="maxPlayer" min="1" max="8" />
+          </p>
+        </form>
+      </div>
+      <!-- Score Goal -->
+      <div class="row">
+        <p class="col s1">
+          <label class="">
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span>
+          </label>
+        </p>
+        <div class="input-field col s5">
+          <input id="input_text" type="number" data-length="4" min="0" />
+          <label for="input_text">Score to Reach</label>
+        </div>
+        <!-- Player Elimination Conditional -->
+        <p class="col s6">
+          <label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span>Player Elimination?</span>
+          </label>
+        </p>
+      </div>
+      <!-- Point Conditional -->
+      <div class="row">
+        <p class="col s1">
+          <label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span>
+          </label>
+        </p>
+        <h6 class="col s11">End-Game Conditional:</h6>
+        <div class="row">
+          <div class="input-field col s12">
+            <select>
+              <option value="" disabled selected>The game ends when...</option>
+              <option value="rounds">Round limit is reached</option>
+              <option value="score">Score limit is reached</option>
+              <option value="elimination">Only one player remaining</option>
+            </select>
+            <label>What ends your game?</label>
+          </div>
+        </div>
+      </div>
+      <!-- Maximum Number of Rounds -->
+      <div class="row">
+        <p class="col s1">
+          <label>
+            <input type="checkbox" class="filled-in" checked="checked" />
+            <span></span>
+          </label>
+        </p>
+        <h6 class="col s11">Number of Rounds:</h6>
+        <form action="#">
+          <p class="range-field">
+            <input type="range" id="maxPlayer" min="1" max="25" />
+          </p>
+        </form>
+      </div>
+      <!-- Submit Game -->
+      <div class="row">
+        <div class="col s12">
+          <a class="waves-effect waves-light btn green">Submit Game</a>
+        </div>
       </div>
     </div>
     <!-- Custom Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("select").formSelect();
+      });
+      $(document).ready(function() {
+        $("input#input_text, textarea#textarea2").characterCounter();
+      });
+    </script>
   </body>
 </html>
