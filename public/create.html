@@ -32,7 +32,7 @@
     </nav>
     <!-- Container -->
     <div class="container">
-      <div class="row center-align teal-text"><h4>Create Your Game</h4></div>
+      <div class="row center-align grey-text"><h4>Create Your Ruleset</h4></div>
       <!-- Name of Game -->
       <div class="row" id="">
         <form class="col s12">
@@ -46,7 +46,7 @@
       </div>
       <!-- Point Conditional -->
       <!-- End Condition (ROUNDS/SCORE/ELIMINATION) -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="input-field col s12">
           <select>
             <option value="" disabled selected>Make your selection</option>
@@ -56,28 +56,47 @@
           </select>
           <label>The game ends when:</label>
         </div>
-      </div>
+      </div> -->
       <!-- Minimum Number of Players -->
-      <div class="row">
+      <!-- <div class="row">
         <h6>Minimum Players:</h6>
         <form action="#">
           <p class="range-field">
             <input type="range" id="minPlayer" min="1" max="8" />
           </p>
         </form>
-      </div>
-      <!-- Maximum Number of Players -->
-      <div class="row">
-        <h6>Max Players:</h6>
+    </div> -->
+    <!-- Maximum Number of Players -->
+    <div class="row">
+        <h6 class="grey-text">Maximum Number of Players/Teams:</h6>
         <form action="#">
-          <p class="range-field">
-            <input type="range" id="maxPlayer" min="1" max="8" />
-          </p>
+            <p class="range-field">
+                <input type="range" id="maxPlayer" min="1" max="6" />
+            </p>
         </form>
-      </div>
+    </div>
+    <!-- Maximum Number of Rounds -->
+    <div class="row">
+            <!-- <p class="col s1">
+              <label class="">
+                <input
+                  type="checkbox"
+                  class="filled-in"
+                  id="limitRounds"
+                  checked="checked"
+                />
+                <span>
+                </span>
+                </label>
+            </p> -->
+            <div class="input-field col s12">
+                <input id="roundLimit" type="number" data-length="2" min="0" />
+                <label for="roundLimit">Maximum Number of Rounds (Optional)</label>
+            </div>
+    
       <!-- Score Goal -->
       <div class="row">
-        <p class="col s1">
+        <!-- <p class="col s1">
           <label class="">
             <input
               type="checkbox"
@@ -88,13 +107,13 @@
             <span>
             </span>
             </label>
-        </p>
-        <div class="input-field col s5">
+        </p> -->
+        <div class="input-field col s12">
             <input id="scoreLimit" type="number" data-length="4" min="0" />
-            <label for="scoreLimit">Score to Reach</label>
+            <label for="scoreLimit">Score to Reach (Optional)</label>
         </div>
         <!-- Player Elimination Conditional -->
-        <p class="col s6">
+        <!-- <p class="col s6">
           <label>
             <input
               type="checkbox"
@@ -105,34 +124,11 @@
             <span>Player Elimination?</span>
           </label>
         </p>
-      </div>
-      <!-- Maximum Number of Rounds -->
-      <div class="row">
-        <p class="col s1">
-          <label>
-            <input
-              type="checkbox"
-              class="filled-in"
-              id="limitRounds"
-              checked="checked"
-            />
-            <span>
-
-            </label>
-        </span>
-        </p>
-        <h6 class="col s11">Number of Rounds:</h6>
-        <div class="row">
-          <form action="#">
-            <p class="range-field">
-              <input type="range" id="roundLimit" min="1" max="25" />
-            </p>
-          </form>
-        </div>
-      </div>
+      </div> -->
       <!-- Submit Game -->
       <div class="row">
-          <a class="waves-effect waves-light btn green col s12" id="submitGame">Submit Game</a>
+          <a class="waves-effect waves-light btn green col s8" id="submitGame">Save & Start</a>
+          <a class="waves-effect waves-light btn blue darken-2 col s4" id="saveGame">Save Only</a>
       </div>
     </div>
     <!-- Custom Script -->
@@ -143,7 +139,7 @@
       });
       $(document).ready(function() {
         $(
-          "input#input_text, input#scoreLimit, textarea#textarea2"
+          "input#input_text, input#scoreLimit, input#roundLimit, textarea#textarea2"
         ).characterCounter();
       });
     </script>
