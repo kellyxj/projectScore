@@ -3,16 +3,28 @@ module.exports = function(sequelize, DataTypes) {
         name: {
             type: DataTypes.STRING,
             validate: {
-                len: [1]
+                len: [1, 50]
             }
         },
         endCondition: DataTypes.STRING,
-        minPlayers: DataTypes.INTEGER,
-        maxPlayers: DataTypes.INTEGER,
-        pointGoal: DataTypes.INTEGER,
-        pointConditional: DataTypes.INTEGER,
-        maxRounds: DataTypes.INTEGER,
-        playerOutCondition: DataTypes.STRING
+        minPlayers: {
+            type: DataTypes.INTEGER,
+            default: 1
+        },
+        maxPlayers: {
+            type: DataTypes.INTEGER,
+            validate: {
+                leq: 6
+            }
+        },
+        pointGoal: {
+            type: DataTypes.INTEGER,
+            default: null
+        },
+        maxRounds: {
+            type: DataTypes.INTEGER,
+            default: null
+        }
     });
     return Game;
 };
