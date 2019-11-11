@@ -2,51 +2,74 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Score!</title>
+    <title>ScoreKEEPER</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="styles/reset.css" />
     <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <!-- Link to our CSS Page -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- Fonts using  -->
     <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
       rel="stylesheet"
-      href="css/styles.css"
-      media="screen"
-      title="no title"
     />
     <!-- Link to JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Compiled and minified JavaScript -->
   </head>
 
   <body>
     <!-- NavBar -->
-    <nav>
-      <!-- Title  -->
-      <div class="nav-wrapper green">
-        <a href="#!" class="brand-logo" style="margin-left: 1%">SCOREEE</a>
+    <!-- <nav class="nav-wrapper green" media="screen"> -->
+    <div class="header">
+      <div class="row">
+        <div id="logo" class="col s12 m10 l4">
+          <a href="#">
+            <img
+              src="styles/images/logo-yellow.png"
+              alt="scorekeeper logo"
+              width="100%"
+          /></a>
+        </div>
       </div>
-    </nav>
+    </div>
+    <!-- </nav> -->
+
     <!-- Container -->
     <div class="container">
       <!-- Row: Title & "Add Game" Button -->
       <div class="row">
-        <h1>
-          All Games
-          <a
-            class="btn-floating btn-large waves-effect waves-light green pulse"
-            id="createGame"
-            href="./create.html"
-            ><i class="material-icons">+</i></a
-          >
-        </h1>
+        <div class="col s12 m10 l8">
+          <h1>
+            All Games
+            <a
+              class="btn-floating btn-large waves-effect waves-light green pulse"
+              id="createGame"
+              href="./create.html"
+              ><i class="material-icons"
+                ><img
+                  src="styles/images/pencilplus.png"
+                  alt="vector pencil"
+                  width="50px"
+                  padding-bottom="0"/></i
+            ></a>
+          </h1>
+        </div>
       </div>
       <!-- Row: List of games populated from DB -->
       <div class="row">
-        <div class="s8 offset-s2" id="populateGames"></div>
+        <div class="col s10 offset-s2" id="populateGames">
+          <h3>
+            <ul>
+              <li><span>Test Game Cornhole</span></li>
+            </ul>
+          </h3>
+        </div>
       </div>
     </div>
     <!-- Materialize Script -->

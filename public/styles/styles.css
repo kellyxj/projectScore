@@ -1,3 +1,81 @@
+body {
+  background: #20752c;
+  color: #f7f2e8;
+  font-family: "Quicksand", sans-serif;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+}
+
+.header {
+  background: #4caf50;
+  width: 100%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    float: none;
+    width: 100%;
+  }
+}
+
+img {
+  padding: 10px;
+  vertical-align: text-bottom;
+}
+
+.container {
+  margin-top: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+
+#containerForm {
+  background: #feffe2;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #2d4e8e;
+  color: navy;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+h4 {
+  margin-left: 2px;
+}
+
 .list-group-item {
   line-height: 2.5;
+}
+
+#maxPlayerForm {
+  margin-left: 10px;
+}
+
+#saveGame,
+#submitGame {
+  margin-top: 40px;
+}
+
+.scoreAdjust {
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 5px;
+}
+
+i.material-icons {
+  vertical-align: top;
+  align-content: left;
+}
+
+footer {
+  /* padding-top: 60px; */
+  color: #cccccc;
+  background: #20752c;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
 }
