@@ -30,6 +30,7 @@ img {
   margin-left: 5%;
   margin-right: 5%;
   width: 90%;
+  padding-bottom: 60px;
 }
 
 #containerForm {
@@ -74,10 +75,6 @@ i.material-icons {
   margin-left: 10px;
   margin-right: 20px;
   align-content: center;
-}
-
-.emptyDivForFooter {
-  height: 50px;
 }
 
 #nextRound {
