@@ -40,7 +40,8 @@ img {
   border-color: #2d4e8e;
   color: navy;
   margin-top: 10px;
-  padding: 5px;
+  margin-bottom: 10px;
+  padding-bottom: 3px;
 }
 
 h4 {
@@ -55,9 +56,18 @@ h4 {
   margin-left: 10px;
 }
 
-#saveGame,
 #submitGame {
   margin-top: 40px;
+  margin-left: 2%;
+  margin-right: 1%;
+  width: 47%;
+}
+
+#saveGame {
+  margin-top: 40px;
+  margin-left: 1%;
+  margin-right: 2%;
+  width: 47%;
 }
 
 .scoreAdjust {
