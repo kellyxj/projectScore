@@ -30,12 +30,12 @@
         <div class="header">
             <div class="row">
               <div id="logo" class="col s12 m10 l4">
-                <a href="#">
+                <!-- <a href="#"> -->
                   <img
                     src="styles/images/logo-yellow.png"
                     alt="scorekeeper logo"
-                    width="100%"
-                /></a>
+                    width="100%">
+                <!-- /></a> -->
               </div>
             </div>
           </div>
@@ -45,10 +45,10 @@
 <div class="container">
     <!-- Row: Space for dynamically created cards for players to input scores and their current round/score displayed -->
     <div class="row">
-      <div class="col s11">
-        <!-- each card is within the s11 column -->
+      <div class="col s10">
+        <!-- each card is within the s10 column -->
         <div class="row">
-          <div class="col s12 col l6">
+          <div class="col s12 l6">
             <div class="playerCard">
             <!-- card front -->
             <div class="card green lighten-4">
@@ -80,49 +80,49 @@
               </div>
               <!-- closes column settings for card  -->
             </div>
+            <!-- each card is within the s10 column -->
+            <div class="row">
+                <div class="col s12 l6">
+                  <div class="playerCard">
+                  <!-- card front -->
+                  <div class="card yellow lighten-4">
+                    <div class="card-image waves-effect waves-block waves-light"></div>
+                      <div class="card-content">
+                        <span class="card-title activator yellow-text text-darken-4"
+                          ><br /><b>Player/Team 2</b><i class="material-icons right">+</i></span
+                        >
+                        <p class="yellow-text text-darken-4">Current Score:</p>
+                      </div>
+                      <!-- inner card bg color -->
+                      <div class="card-reveal yellow lighten-2">
+                        <span class="card-title yellow-text text-darken-4"
+                        >Player/Team 2<i class="material-icons right">-</i></span
+                        >
+                        <br>
+                        <p>
+                          <form method="post" action="">
+                            <div class="row center">
+                              <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light yellow darken-2"><i class="small material-icons" font-size="40px">-</i></a>
+                              <input class="col s1 btn-floating btn-large yellow-text text-darken-4" type="number" name="player2" id="player2" value="0">  
+                              <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light yellow darken-4"><i class="small material-icons" font-size="40px">+</i></a>
+                            </div>    
+                          </form>        
+                        </p>
+                      </div>
+                    </div>
+                    <!-- closes card class  -->
+                    </div>
+                    <!-- closes column settings for card  -->
+                  </div>
             <!-- closes card row -->
           </div>
 
-        <!-- each card is within the s11 column -->
-        <div class="row">
-            <div class="col s12 col l6">
-              <div class="playerCard">
-              <!-- card front -->
-              <div class="card yellow lighten-4">
-                <div class="card-image waves-effect waves-block waves-light"></div>
-                  <div class="card-content">
-                    <span class="card-title activator yellow-text text-darken-4"
-                      ><br /><b>Player/Team 2</b><i class="material-icons right">+</i></span
-                    >
-                    <p class="yellow-text text-darken-4">Current Score:</p>
-                  </div>
-                  <!-- inner card bg color -->
-                  <div class="card-reveal yellow lighten-2">
-                    <span class="card-title yellow-text text-darken-4"
-                    >Player/Team 2<i class="material-icons right">-</i></span
-                    >
-                    <br>
-                    <p>
-                      <form method="post" action="">
-                        <div class="row center">
-                          <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light yellow darken-2"><i class="small material-icons" font-size="40px">-</i></a>
-                          <input class="col s1 btn-floating btn-large yellow-text text-darken-4" type="number" name="player2" id="player2" value="0">  
-                          <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light yellow darken-4"><i class="small material-icons" font-size="40px">+</i></a>
-                        </div>    
-                      </form>        
-                    </p>
-                  </div>
-                </div>
-                <!-- closes card class  -->
-                </div>
-                <!-- closes column settings for card  -->
-              </div>
               <!-- closes card row -->
-            </div>
+            <!-- </div> -->
 
-        <!-- each card is within the s11 column -->
+        <!-- each card is within the s10 column -->
         <div class="row">
-            <div class="col s12 col l6">
+            <div class="col s12 l6">
               <div class="playerCard">
               <!-- card front -->
               <div class="card blue lighten-4">
@@ -154,12 +154,119 @@
                 </div>
                 <!-- closes column settings for card  -->
               </div>
+              <!-- each card is within the s10 column -->
+              <div class="row">
+                <div class="col s12 l6">
+                  <div class="playerCard">
+                  <!-- card front -->
+                  <div class="card indigo lighten-4">
+                    <div class="card-image waves-effect waves-block waves-light"></div>
+                      <div class="card-content">
+                        <span class="card-title activator indigo-text text-darken-4"
+                          ><br /><b>Player/Team 4</b><i class="material-icons right">+</i></span
+                        >
+                        <p class="indigo-text text-darken-4">Current Score:</p>
+                      </div>
+                      <!-- inner card bg color -->
+                      <div class="card-reveal indigo lighten-2">
+                        <span class="card-title indigo-text text-darken-4"
+                        >Player/Team 4<i class="material-icons right">-</i></span
+                        >
+                        <br>
+                        <p>
+                          <form method="post" action="">
+                            <div class="row center">
+                              <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light indigo darken-2"><i class="small material-icons" font-size="40px">-</i></a>
+                              <input class="col s1 btn-floating btn-large indigo-text text-darken-4" type="number" name="player4" id="player4" value="0">  
+                              <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light indigo darken-4"><i class="small material-icons" font-size="40px">+</i></a>
+                            </div>    
+                          </form>        
+                        </p>
+                      </div>
+                    </div>
+                    <!-- closes card class  -->
+                    </div>
+                    <!-- closes column settings for card  -->
+                  </div>
               <!-- closes card row -->
             </div>            
 
+            <!-- closes card row -->
+          <!-- </div> -->
 
+        <!-- each card is within the s10 column -->
+        <div class="row">
+            <div class="col s12 l6">
+              <div class="playerCard">
+              <!-- card front -->
+              <div class="card orange lighten-4">
+                <div class="card-image waves-effect waves-block waves-light"></div>
+                  <div class="card-content">
+                    <span class="card-title activator orange-text text-darken-4"
+                      ><br /><b>Player/Team 5</b><i class="material-icons right">+</i></span
+                    >
+                    <p class="orange-text text-darken-4">Current Score:</p>
+                  </div>
+                  <!-- inner card bg color -->
+                  <div class="card-reveal orange lighten-2">
+                    <span class="card-title orange-text text-darken-4"
+                    >Player/Team 5<i class="material-icons right">-</i></span
+                    >
+                    <br>
+                    <p>
+                      <form method="post" action="">
+                        <div class="row center">
+                          <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light orange darken-2"><i class="small material-icons" font-size="40px">-</i></a>
+                          <input class="col s1 btn-floating btn-large orange-text text-darken-4" type="number" name="player5" id="player5" value="0">  
+                          <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light orange darken-4"><i class="small material-icons" font-size="40px">+</i></a>
+                        </div>    
+                      </form>        
+                    </p>
+                  </div>
+                </div>
+                <!-- closes card class  -->
+                </div>
+                <!-- closes column settings for card  -->
+              </div>
+              <!-- each card is within the s11 column -->
+              <div class="row">
+                <div class="col s12 l6">
+                  <div class="playerCard">
+                  <!-- card front -->
+                  <div class="card pink lighten-4">
+                    <div class="card-image waves-effect waves-block waves-light"></div>
+                      <div class="card-content">
+                        <span class="card-title activator pink-text text-darken-4"
+                          ><br /><b>Player/Team 6</b><i class="material-icons right">+</i></span
+                        >
+                        <p class="pink-text text-darken-4">Current Score:</p>
+                      </div>
+                      <!-- inner card bg color -->
+                      <div class="card-reveal pink lighten-2">
+                        <span class="card-title pink-text text-darken-4"
+                        >Player/Team 6<i class="material-icons right">-</i></span
+                        >
+                        <br>
+                        <p>
+                          <form method="post" action="">
+                            <div class="row center">
+                              <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light pink darken-2"><i class="small material-icons" font-size="40px">-</i></a>
+                              <input class="col s1 btn-floating btn-large pink-text text-darken-4" type="number" name="player6" id="player6" value="0">  
+                              <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light pink darken-4"><i class="small material-icons" font-size="40px">+</i></a>
+                            </div>    
+                          </form>        
+                        </p>
+                      </div>
+                    </div>
+                    <!-- closes card class  -->
+                    </div>
+                    <!-- closes column settings for card  -->
+                  </div>
+              <!-- closes card row -->
+            </div>
 
-
+            <!-- closes card row -->
+          <!-- </div> -->
 
 
 
@@ -179,6 +286,7 @@
       </div>
     <!-- closes row for cards and add player -->
     </div>  
+    <div class="row"><h1 class="emptyDivForFooter"></h1></div>
 <!-- closes container -->
 </div>      
       
@@ -199,6 +307,7 @@
 
   <!-- Custom Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- Script for counters on cards  -->
   <script>$(".scoreAdjust").on("click", function() {
 
           var $button = $(this);

@@ -21,7 +21,7 @@ body {
 }
 
 img {
-  padding: 10px;
+  padding: 3px;
   vertical-align: text-bottom;
 }
 
@@ -70,8 +70,12 @@ i.material-icons {
   align-content: left;
 }
 
+.emptyDivForFooter {
+  height: 80px;
+}
+
 footer {
-  /* padding-top: 60px; */
+  padding-top: 10px;
   color: #cccccc;
   background: #20752c;
   width: 100%;
