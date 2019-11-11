@@ -70,8 +70,24 @@ i.material-icons {
   align-content: left;
 }
 
+#gameAdjustColumn {
+  margin-left: 10px;
+  margin-right: 20px;
+  align-content: center;
+}
+
 .emptyDivForFooter {
-  height: 80px;
+  height: 50px;
+}
+
+#nextRound {
+  margin: 3px;
+  width: 70%;
+}
+
+#endGame {
+  margin: 3px;
+  width: 25%;
 }
 
 footer {
@@ -82,4 +98,5 @@ footer {
   position: fixed;
   bottom: 0;
   z-index: 5;
+  overflow: auto;
 }
