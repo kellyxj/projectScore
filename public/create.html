@@ -2,93 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Score!</title>
+    <title>ScoreKEEPER Ruleset</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="styles/reset.css" />
     <!-- Compiled and minified CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <!-- Link to our CSS Page -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- Fonts using  -->
     <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
       rel="stylesheet"
-      href="css/styles.css"
-      media="screen"
-      title="no title"
     />
     <!-- Link to JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Compiled and minified JavaScript -->
   </head>
 
   <body>
     <!-- NavBar -->
-    <nav>
-      <!-- Title  -->
-      <div class="nav-wrapper green">
-        <a href="/" class="brand-logo" style="margin-left: 1%">SCOREEE</a>
-      </div>
-    </nav>
+    <!-- <nav class="nav-wrapper green" media="screen"> -->
+        <div class="header">
+            <div class="row">
+              <div id="logo" class="col s12 m10 l4">
+                <a href="#">
+                  <img
+                    src="styles/images/logo-yellow.png"
+                    alt="scorekeeper logo"
+                    width="100%"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <!-- </nav> -->
     <!-- Container -->
-    <div class="container">
-      <div class="row center-align grey-text"><h4>Create Your Ruleset</h4></div>
+    <div class="container" id="containerForm">
+      <div class="row center-align">
+        <h4>Create A Ruleset<img src="styles/images/pencil.png" alt="vector pencil" width="65px" padding-bottom="0"></h4>
+      </div>
       <!-- Name of Game -->
-      <div class="row" id="">
+      <div class="row center-align" id="">
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field col s12 grey-text">
               <input id="input_text" type="text" data-length="50" />
               <label for="input_text">Game Name</label>
             </div>
           </div>
+
+
+
+
+
         </form>
       </div>
-      <!-- Point Conditional -->
-      <!-- End Condition (ROUNDS/SCORE/ELIMINATION) -->
-      <!-- <div class="row">
-        <div class="input-field col s12">
-          <select>
-            <option value="" disabled selected>Make your selection</option>
-            <option value="rounds">Round limit is reached.</option>
-            <option value="score">Score limit is reached.</option>
-            <option value="elimination">Only one player is remaining.</option>
-          </select>
-          <label>The game ends when:</label>
-        </div>
-      </div> -->
-      <!-- Minimum Number of Players -->
-      <!-- <div class="row">
-        <h6>Minimum Players:</h6>
-        <form action="#">
-          <p class="range-field">
-            <input type="range" id="minPlayer" min="1" max="8" />
-          </p>
-        </form>
-    </div> -->
     <!-- Maximum Number of Players -->
     <div class="row">
-        <h6 class="grey-text">Maximum Number of Players/Teams:</h6>
+        <div class="grey-text" id="maxPlayerForm">Maximum Number of Players/Teams:</div>
         <form action="#">
             <p class="range-field">
-                <input type="range" id="maxPlayer" min="1" max="6" />
+                <input type="range" id="maxPlayer" min="1" max="6" margin-left="1%" margin-right="1%" />
             </p>
         </form>
     </div>
     <!-- Maximum Number of Rounds -->
     <div class="row">
-            <!-- <p class="col s1">
-              <label class="">
-                <input
-                  type="checkbox"
-                  class="filled-in"
-                  id="limitRounds"
-                  checked="checked"
-                />
-                <span>
-                </span>
-                </label>
-            </p> -->
             <div class="input-field col s12">
                 <input id="roundLimit" type="number" data-length="2" min="0" />
                 <label for="roundLimit">Maximum Number of Rounds (Optional)</label>
@@ -96,35 +78,13 @@
     
       <!-- Score Goal -->
       <div class="row">
-        <!-- <p class="col s1">
-          <label class="">
-            <input
-              type="checkbox"
-              class="filled-in"
-              id="limitScore"
-              checked="checked"
-            />
-            <span>
-            </span>
-            </label>
-        </p> -->
         <div class="input-field col s12">
             <input id="scoreLimit" type="number" data-length="4" min="0" />
             <label for="scoreLimit">Score to Reach (Optional)</label>
         </div>
-        <!-- Player Elimination Conditional -->
-        <!-- <p class="col s6">
-          <label>
-            <input
-              type="checkbox"
-              class="filled-in"
-              id="playerElimination"
-              checked="checked"
-            />
-            <span>Player Elimination?</span>
-          </label>
-        </p>
-      </div> -->
+
+      <br>
+      <br>
       <!-- Submit Game -->
       <div class="row">
           <a class="waves-effect waves-light btn green col s8" id="submitGame">Save & Start</a>
