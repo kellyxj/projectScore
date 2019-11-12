@@ -6,17 +6,13 @@ module.exports = function(sequelize, DataTypes) {
                 len: [1, 50]
             }
         },
-        endCondition: {
-            type: DataTypes.STRING,
-            default: null
-        },
+        endCondition: DataTypes.STRING,
         minPlayers: {
             type: DataTypes.INTEGER,
             default: 1
         },
         maxPlayers: {
             type: DataTypes.INTEGER,
-            default: 6,
             validate: {
                 max: 6
             }

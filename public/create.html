@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>ScoreKEEPER Ruleset</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+​
     <!-- reset CSS -->
     <link rel="stylesheet" href="styles/reset.css" />
     <!-- Compiled and minified CSS -->
@@ -20,9 +20,12 @@
       rel="stylesheet"
     />
     <!-- Link to JQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>  
   </head>
-
+​
   <body>
     <!-- NavBar -->
     <!-- <nav class="nav-wrapper green" media="screen"> -->
@@ -32,7 +35,7 @@
                 <a href="#">
                   <img
                     src="styles/images/logo-yellow.png"
-                    alt="scorekeeper logo"
+                    alt="scorekeeper logo"
                     width="100%"
                 /></a>
               </div>
@@ -53,11 +56,11 @@
               <label for="input_text">Game Name</label>
             </div>
           </div>
-
-
-
-
-
+​
+​
+​
+​
+​
         </form>
       </div>
     <!-- Maximum Number of Players -->
@@ -82,7 +85,7 @@
             <input id="scoreLimit" type="number" data-length="4" min="0" />
             <label for="scoreLimit">Score to Reach (Optional)</label>
         </div>
-
+​
       <br>
       <br>
       <!-- Submit Game -->
@@ -95,12 +98,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
       $(document).ready(function() {
-        $("select").formSelect();
-        $(
-          "input#input_text, input#scoreLimit, input#roundLimit, textarea#textarea2"
-        ).characterCounter();
-        $("#submitGame").click(()=> {
-          let endCond = [];
+          $("select").formSelect();
+          $(
+              "input#input_text, input#scoreLimit, input#roundLimit, textarea#textarea2"
+              ).characterCounter();
+              $("#submitGame").click(()=> {
+                  let endCond = [];
           if($("#scoreLimit").val()) {
             endCond.push("score");
           }
