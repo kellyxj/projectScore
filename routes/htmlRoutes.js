@@ -7,7 +7,7 @@ module.exports = function(app) {
     });
 
     // Load example page and pass in an example by id
-    app.get("/play", function(req, res) {
+    app.get("/play/:id", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/play.html"));
     });
 
