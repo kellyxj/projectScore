@@ -13,10 +13,6 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use(function(req, res, next) {
-    res.setHeader(
-        "Content-Security-Policy",
-        "script-src 'self' https://apis.google.com"
-    );
     return next();
 });
 
