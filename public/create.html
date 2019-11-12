@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ScoreKEEPER Ruleset</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="styles/reset.css" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Link to our CSS Page -->
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- Fonts using  -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to JQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+  </head>
+
+  <body>
+    <!-- NavBar -->
+    <!-- <nav class="nav-wrapper green" media="screen"> -->
+        <div class="header">
+            <div class="row">
+              <div id="logo" class="col s12 m10 l4">
+                <a href="#">
+                  <img
+                    src="styles/images/logo-yellow.png"
+                    alt="scorekeeper logo"
+                    width="100%"
+                /></a>
+              </div>
+            </div>
+          </div>
+          <!-- </nav> -->
+    <!-- Container -->
+    <div class="container" id="containerForm">
+      <div class="row center-align">
+        <h4>Create A Ruleset<img src="styles/images/pencil.png" alt="vector pencil" width="65px" padding-bottom="0"></h4>
+      </div>
+      <!-- Name of Game -->
+      <div class="row center-align" id="">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12 grey-text">
+              <input id="input_text" type="text" data-length="50" />
+              <label for="input_text">Game Name</label>
+            </div>
+          </div>
+
+
+
+
+
+        </form>
+      </div>
+    <!-- Maximum Number of Players -->
+    <div class="row">
+        <div class="grey-text" id="maxPlayerForm">Maximum Number of Players/Teams:</div>
+        <form action="#">
+            <p class="range-field">
+                <input type="range" id="maxPlayer" min="1" max="6" margin-left="1%" margin-right="1%" />
+            </p>
+        </form>
+    </div>
+    <!-- Maximum Number of Rounds -->
+    <div class="row">
+            <div class="input-field col s12">
+                <input id="roundLimit" type="number" data-length="2" min="0" />
+                <label for="roundLimit">Maximum Number of Rounds (Optional)</label>
+            </div>
+    
+      <!-- Score Goal -->
+      <div class="row">
+        <div class="input-field col s12">
+            <input id="scoreLimit" type="number" data-length="4" min="0" />
+            <label for="scoreLimit">Score to Reach (Optional)</label>
+        </div>
+
+      <br>
+      <br>
+      <!-- Submit Game -->
+      <div class="row">
+          <a class="waves-effect waves-light btn green col s8" id="submitGame">Save & Start</a>
+          <a class="waves-effect waves-light btn blue darken-2 col s4" id="saveGame">Save Only</a>
+      </div>
+    </div>
+    <!-- Custom Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("select").formSelect();
+      });
+      $(document).ready(function() {
+        $(
+          "input#input_text, input#scoreLimit, input#roundLimit, textarea#textarea2"
+        ).characterCounter();
+      });
+    </script>
+  </body>
+</html>
