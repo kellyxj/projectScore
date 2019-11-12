@@ -136,11 +136,26 @@
     <script>
       $(document).ready(function() {
         $("select").formSelect();
-      });
-      $(document).ready(function() {
         $(
           "input#input_text, input#scoreLimit, input#roundLimit, textarea#textarea2"
         ).characterCounter();
+        $("#submitGame").click(()=> {
+          let endCond = [];
+          if($("#scoreLimit").val()) {
+            endCond.push("score");
+          }
+          if($("#roundLimit").val()) {
+            endCond.push("round");
+          }
+          $.post("/api/games", {
+            name:$("#input_text").val(),
+            endCondition: endCond?endCond.toString():"",
+            minPlayers: 1,
+            maxPlayers: $("#maxPlayer").val()?$("#maxPlayer").val():null,
+            pointGoal: $("#scoreLimit").val()?$("#scoreLimit").val():null,
+            maxRounds: $("#roundLimit").val()?$("#roundLimit").val():null
+          })    
+        })
       });
     </script>
   </body>

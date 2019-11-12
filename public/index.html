@@ -1,56 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Score!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta charset="UTF-8" />
+        <title>Score!</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
-    <!-- Link to our CSS Page -->
-    <link
-      rel="stylesheet"
-      href="css/styles.css"
-      media="screen"
-      title="no title"
-    />
-    <!-- Link to JQuery -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Compiled and minified JavaScript -->
-  </head>
+        <!-- Compiled and minified CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        />
+        <!-- Link to our CSS Page -->
+        <link
+            rel="stylesheet"
+            href="css/styles.css"
+            media="screen"
+            title="no title"
+        />
+        <!-- Link to JQuery -->
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <!-- Compiled and minified JavaScript -->
+    </head>
 
-  <body>
-    <!-- NavBar -->
-    <nav>
-      <!-- Title  -->
-      <div class="nav-wrapper green">
-        <a href="#!" class="brand-logo" style="margin-left: 1%">SCOREEE</a>
-      </div>
-    </nav>
-    <!-- Container -->
-    <div class="container">
-      <!-- Row: Title & "Add Game" Button -->
-      <div class="row">
-        <h1>
-          All Games
-          <a
-            class="btn-floating btn-large waves-effect waves-light green pulse"
-            id="createGame"
-            href="./create.html"
-            ><i class="material-icons">+</i></a
-          >
-        </h1>
-      </div>
-      <!-- Row: List of games populated from DB -->
-      <div class="row">
-        <div class="s8 offset-s2" id="populateGames"></div>
-      </div>
-    </div>
-    <!-- Materialize Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Custom Script -->
-  </body>
+    <body>
+        <!-- NavBar -->
+        <nav>
+            <!-- Title  -->
+            <div class="nav-wrapper green">
+                <a href="#!" class="brand-logo" style="margin-left: 1%"
+                    >SCOREEE</a
+                >
+            </div>
+        </nav>
+        <!-- Container -->
+        <div class="container">
+            <!-- Row: Title & "Add Game" Button -->
+            <div class="row">
+                <h1>
+                    All Games
+                    <a
+                        class="btn-floating btn-large waves-effect waves-light green pulse"
+                        id="createGame"
+                        href="/create"
+                        ><i class="material-icons">+</i></a
+                    >
+                </h1>
+            </div>
+            <!-- Row: List of games populated from DB -->
+            <div class="row">
+                <div class="s8 offset-s2" id="populateGames"></div>
+            </div>
+        </div>
+        <!-- Materialize Script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- Custom Script -->
+        <script>
+            $.get("/api/games").then(gamesList => {
+                for (const game of gamesList) {
+                    const container = $("<div>");
+                    const link = $("<a>");
+                    const titleText = $("<p>");
+
+                    link.attr("href", "/play/" + game.id);
+                    titleText.text(game.name);
+
+                    container.append(titleText);
+                    link.append(container);
+                    $("#populateGames").append(link);
+                }
+            });
+        </script>
+    </body>
 </html>
