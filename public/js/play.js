@@ -95,9 +95,11 @@ $(document).ready(() => {
                               this.players[i].name
                             }</b><i class="material-icons right">+</i></span
                           >
-                          <p class="green-text text-darken-4">Current Score: <span class="playerCurrentScore">${
-                            this.players[i].totalScore
-                          }</span></p>
+                          <p class="${
+                            cardText[i]
+                          }">Current Score: <span class="playerCurrentScore">${
+          this.players[i].totalScore
+        }</span></p>
                         </div>
                         <!-- inner card bg color -->
                         <div class="card-reveal ${cardInnerBG[i]}">
