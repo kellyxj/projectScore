@@ -117,7 +117,7 @@ $(document).ready(() => {
                                 }"><i class="small material-icons" font-size="40px">-</i></a>
                                 <input class="col s1 btn-floating btn-large ${
                                   cardText[i]
-                                }" type="number" name="player${i +
+                                }" type="number" min="0" name="player${i +
           1}" id="player${i + 1}" value="0">  
                                 <a class="col scoreAdjust btn-floating btn-large waves-effect waves-light ${
                                   buttonPlusBG[i]
