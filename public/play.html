@@ -1,143 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>ScoreKEEPER Scoring</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>ScoreKEEPER Scoring</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- reset CSS -->
-        <link rel="stylesheet" href="../styles/reset.css" />
-        <!-- Compiled and minified CSS -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        />
-        <!-- Link to our CSS Page -->
-        <link rel="stylesheet" href="../styles/styles.css" />
-        <!-- Fonts using  -->
-        <link
-            href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
-            rel="stylesheet"
-        />
-        <link
-            href="https://fonts.googleapis.com/icon?family=Material+Icons"
-            rel="stylesheet"
-        />
-        <!-- Link to JQuery -->
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"
-        ></script>
-        <script src="../js/play.js"></script>
-    </head>
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Link to our CSS Page -->
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <!-- Fonts using  -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- Link to JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/play.js"></script>
+  </head>
 
-    <body>
-        <!-- NavBar -->
-        <!-- <nav class="nav-wrapper green" media="screen"> -->
-        <div class="header">
-            <div class="row">
-                <div id="logo" class="col s12 m10 l4">
-                    <!-- <a href="#"> -->
-                    <img
-                        src="../styles/images/logo-yellow.png"
-                        alt="scorekeeper logo"
-                        width="100%"
-                    />
-                    <!-- /></a> -->
-                </div>
-            </div>
+  <body>
+    <!-- NavBar -->
+    <!-- <nav class="nav-wrapper green" media="screen"> -->
+    <!-- note: we removed the anchor from the nav to prevent accidental ending of games  -->
+    <div class="header">
+      <div class="row">
+        <div id="logo" class="col s12 m10 l4">
+          <!-- <a href="#"> -->
+          <img
+            src="../styles/images/logo-yellow.png"
+            alt="scorekeeper logo"
+            width="100%"
+          />
+          <!-- /></a> -->
         </div>
-        <!-- </nav> -->
+      </div>
+    </div>
+    <!-- </nav> -->
 
-        <!-- Container -->
-        <div class="container">
-            <div class="row">
-                <h3>Game Name: <span id="gameName"></span></h3>
-            </div>
-            <div class="row">
-                <h5>Round: <span id="currentRound"></span></h5>
-            </div>
-            <!-- Row: Space for dynamically created cards for players to input scores and their current round/score displayed -->
-            <div class="row">
-                <div class="col 10 l9">
-                    <!-- each card is within the s10 column -->
-                    <div class="row">
-                        <!-- row 1  -->
-                        <div id="cardHolder" class="col s12 l6"></div>
-                    </div>
-                </div>
+    <!-- Container -->
+    <div class="container">
+      <div class="row">
+        <h3>Game: <span id="gameName"></span></h3>
+      </div>
+      <div class="row">
+        <h5>Round: <span id="currentRound"></span></h5>
+      </div>
+      <!-- Row: Space for dynamically created cards for players to input scores and their current round/score displayed -->
+      <div class="row">
+        <div class="col 10 l9">
+          <!-- each card is within the s10 column -->
+          <div class="row">
+            <!-- row 1  -->
+            <div id="cardHolder"></div>
+          </div>
+        </div>
 
-                <!-- big single column for add button  -->
-                <div class="col s2 l2" id="gameAdjustColumn">
-                    <!-- <div class="row">
+        <!-- big single column for add button  -->
+        <div class="col s2 l2" id="gameAdjustColumn">
+          <!-- <div class="row">
         <h4 id="currentRound">Round:<span></span></h4>
         </div>
         <br>
         <br> -->
-                    <div class="row">
-                        <!-- <a class="btn-large waves-effect waves-#4caf50 background-green"> -->
-                        <a
-                            class="btn-large-flat disabled waves-effect"
-                            id="addPlayer"
-                        >
-                            <img
-                                src="../styles/images/addplayer.png"
-                                alt="add player/team button"
-                                width="100px"
-                                padding-bottom="0"
-                            />
-                        </a>
-                    </div>
-                </div>
-
-                <!-- closes Row for cards and player -->
-            </div>
-            <!-- closes container -->
+          <div class="row">
+            <!-- <a class="btn-large waves-effect waves-#4caf50 background-green"> -->
+            <a class="btn-large-flat disabled waves-effect" id="addPlayer">
+              <img
+                src="../styles/images/addplayer.png"
+                alt="add player/team button"
+                width="100px"
+                padding-bottom="0"
+              />
+            </a>
+          </div>
         </div>
 
-        <footer>
-            <div class="row">
-                <a
-                    class="col waves-effect waves-light btn-large green"
-                    id="nextRound"
-                    >Next Round</a
-                >
-                <a
-                    class="col waves-effect waves-light btn-large red accent-4"
-                    id="endGame"
-                    >end</a
-                >
-            </div>
-        </footer>
+        <!-- closes Row for cards and player -->
+      </div>
+      <!-- closes container -->
+    </div>
 
-        <!-- Custom Script -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <!-- Script for counters on cards  -->
-        <script>
-            $(".scoreAdjust").on("click", function() {
-                var $button = $(this);
-                var oldValue = $button
-                    .parent()
-                    .find("input")
-                    .val();
+    <footer>
+      <div class="row">
+        <a class="col waves-effect waves-light btn-large green" id="nextRound"
+          >Next Round</a
+        >
+        <a
+          class="col waves-effect waves-light btn-large red accent-4"
+          id="endGame"
+          >End Game / Home</a
+        >
+      </div>
+    </footer>
 
-                if ($button.text() == "+") {
-                    var newVal = parseFloat(oldValue) + 1;
-                } else {
-                    // Don't allow decrementing below zero
-                    if (oldValue > 0) {
-                        var newVal = parseFloat(oldValue) - 1;
-                    } else {
-                        newVal = 0;
-                    }
-                }
+    <!-- Custom Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Script for counters on cards  -->
+    <script>
+      $(".scoreAdjust").on("click", function() {
+        var $button = $(this);
+        var oldValue = $button
+          .parent()
+          .find("input")
+          .val();
 
-                $button
-                    .parent()
-                    .find("input")
-                    .val(newVal);
-            });
-        </script>
-    </body>
+        if ($button.text() == "+") {
+          var newVal = parseFloat(oldValue) + 1;
+        } else {
+          // Don't allow decrementing below zero
+          if (oldValue > 0) {
+            var newVal = parseFloat(oldValue) - 1;
+          } else {
+            newVal = 0;
+          }
+        }
+
+        $button
+          .parent()
+          .find("input")
+          .val(newVal);
+      });
+    </script>
+  </body>
 </html>

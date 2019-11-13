@@ -1,93 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>ScoreKEEPER</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>ScoreKEEPER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- reset CSS -->
-        <link rel="stylesheet" href="../styles/reset.css" />
-        <!-- Compiled and minified CSS -->
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-        />
-        <!-- Link to our CSS Page -->
-        <link rel="stylesheet" href="../styles/styles.css" />
-        <!-- Fonts using  -->
-        <link
-            href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
-            rel="stylesheet"
-        />
-        <!-- Link to JQuery -->
-        <script
-            src="https://code.jquery.com/jquery-3.4.1.js"
-            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-            crossorigin="anonymous"
-        ></script>
-    </head>
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!-- Link to our CSS Page -->
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <!-- Fonts using  -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to JQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-    <body>
-        <!-- NavBar -->
-        <!-- <nav class="nav-wrapper green" media="screen"> -->
-        <div class="header">
-            <div class="row">
-                <div id="logo" class="col s12 m10 l4">
-                    <a href="#">
-                        <img
-                            src="styles/images/logo-yellow.png"
-                            alt="scorekeeper logo"
-                            width="100%"
-                    /></a>
-                </div>
-            </div>
+  <body>
+    <!-- NavBar -->
+    <!-- <nav class="nav-wrapper green" media="screen"> -->
+    <div class="header">
+      <div class="row">
+        <div id="logo" class="col s12 m10 l4">
+          <a href="#">
+            <img
+              src="styles/images/logo-yellow.png"
+              alt="scorekeeper logo"
+              width="100%"
+          /></a>
         </div>
-        <!-- </nav> -->
+      </div>
+    </div>
+    <!-- </nav> -->
 
-        <!-- Container -->
-        <div class="container">
-            <!-- Row: Title & "Add Game" Button -->
-            <div class="row">
-                <div class="col s12 m10 l8">
-                    <h1>
-                        All Games
-                        <a
-                            class="btn-floating btn-large waves-effect waves-light green pulse"
-                            id="createGame"
-                            href="./create.html"
-                            ><i class="material-icons"
-                                ><img
-                                    src="styles/images/pencilplus.png"
-                                    alt="vector pencil"
-                                    width="50px"
-                                    padding-bottom="0"/></i
-                        ></a>
-                    </h1>
-                </div>
-            </div>
-            <!-- Row: List of games populated from DB -->
-            <div class="row">
-                <div class="col s10 offset-s2" id="populateGames"></div>
-            </div>
+    <!-- Container -->
+    <div class="container">
+      <!-- Row: Title & "Add Game" Button -->
+      <div class="row">
+        <div class="col s12 m10 l8">
+          <h1>
+            All Games
+            <a
+              class="btn-floating btn-large waves-effect waves-light green pulse"
+              id="createGame"
+              href="./create.html"
+              ><i class="material-icons"
+                ><img
+                  src="styles/images/pencilplus.png"
+                  alt="vector pencil"
+                  width="50px"
+                  padding-bottom="0"/></i
+            ></a>
+          </h1>
         </div>
-        <!-- Materialize Script -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        <!-- Custom Script -->
-        <script>
-            $.get("/api/games").then(gamesList => {
-                for (const game of gamesList) {
-                    const container = $("<div>");
-                    const link = $("<a>");
-                    const titleText = $("<p>");
+      </div>
+      <!-- Row: List of games populated from DB -->
+      <div class="row">
+        <h3 class="col s10 offset-s1">
+          <ul>
+            <li id="populateGames"></li>
+          </ul>
+        </h3>
+      </div>
+    </div>
+    <!-- Materialize Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom Script -->
+    <script>
+      $.get("/api/games").then(gamesList => {
+        for (const game of gamesList) {
+          const container = $("<div>");
+          const link = $("<a>");
+          const titleText = $("<p>");
 
-                    link.attr("href", "/play/" + game.id);
-                    titleText.text(game.name);
+          link.attr("href", "/play/" + game.id);
+          titleText.text(game.name);
 
-                    container.append(titleText);
-                    link.append(container);
-                    $("#populateGames").append(link);
-                }
-            });
-        </script>
-    </body>
+          container.append(titleText);
+          link.append(container);
+          $("#populateGames").append(link);
+        }
+      });
+    </script>
+  </body>
 </html>
