@@ -6,7 +6,7 @@ Provides a user interface to maintain game states and keep track of scores for a
 
 ## How To Run:
 
-    - visit: **OurURLhere***
+    - visit: https://aqueous-refuge-97923.herokuapp.com/
     - Select the game you'd like to play
     - Keep track of score, roll dice, and more!
     - OR add your own game
